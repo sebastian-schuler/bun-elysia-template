@@ -17,6 +17,6 @@ const server = new Elysia({ name: 'Server' })
 
 server.listen({ port: env.PORT }, ({ hostname, port }) => {
     const url = env.NODE_ENV === 'production' ? 'https' : 'http';
-    console.log(`Elysia is running at ${url}://${hostname}:${port}`);
-    console.log(`Swagger available at ${url}://${hostname}:${port}/swagger`);
+    console.log(`✅ Elysia is running at ${url}://${hostname}:${port}`);
+    console.log(`✅ Swagger available at ${url}://${hostname}:${port}/swagger`);
 });
