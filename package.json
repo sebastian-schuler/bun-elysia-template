@@ -4,7 +4,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "bun run --watch src/index.ts",
-        "db-types": "kysely-codegen"
+        "db-types": "kysely-codegen",
+        "format": "prettier --write ."
     },
     "dependencies": {
         "@elysiajs/cors": "^1.2.0",

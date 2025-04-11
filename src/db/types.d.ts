@@ -3,17 +3,17 @@
  * Please do not edit it manually.
  */
 
-import type { ColumnType } from "kysely";
+import type { ColumnType } from 'kysely';
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
 export interface Customer {
-  creationDate: Timestamp;
-  email: string;
-  id: string;
-  name: string;
+    creationDate: Timestamp;
+    email: string;
+    id: string;
+    name: string;
 }
 
 export interface DB {
-  customers: Customer;
+    customers: Customer;
 }

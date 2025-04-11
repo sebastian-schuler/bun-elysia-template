@@ -1,7 +1,38 @@
 {
+    // Prettier
     "prettier.singleQuote": true,
     "prettier.quoteProps": "consistent",
-    "prettier.printWidth": 120,
+    "prettier.printWidth": 110,
     "prettier.jsxSingleQuote": true,
-    "typescript.tsdk": "node_modules\\typescript\\lib"
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "es5",
+    "prettier.bracketSpacing": true,
+    "prettier.arrowParens": "always",
+    "prettier.endOfLine": "lf",
+    // Formatting
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    // Files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true
+    },
+    // Typescript
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    // Extensions
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

@@ -1,6 +1,6 @@
-import { CamelCasePlugin, DeduplicateJoinsPlugin, Kysely, PostgresDialect } from "kysely";
-import { Pool } from "pg";
-import { DB } from "./types";
+import { CamelCasePlugin, DeduplicateJoinsPlugin, Kysely, PostgresDialect } from 'kysely';
+import { Pool } from 'pg';
+import { DB } from './types';
 
 export const db = new Kysely<DB>({
     dialect: new PostgresDialect({
@@ -9,5 +9,5 @@ export const db = new Kysely<DB>({
         }),
     }),
     plugins: [new CamelCasePlugin(), new DeduplicateJoinsPlugin()],
-    log: ["error"],
-}).withSchema("testing");
+    log: ['error'],
+}).withSchema('testing');
