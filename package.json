@@ -1,15 +1,24 @@
 {
-  "name": "bun-elysia-template",
-  "version": "1.0.50",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "name": "bun-elysia-template",
+    "version": "1.0.50",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "bun run --watch src/index.ts",
+        "db-types": "kysely-codegen"
+    },
+    "dependencies": {
+        "@elysiajs/cors": "^1.2.0",
+        "@elysiajs/swagger": "^1.2.2",
+        "@types/pg": "^8.11.11",
+        "elysia": "latest",
+        "elysia-helmet": "^2.0.0",
+        "kysely": "^0.27.6",
+        "pg": "^8.14.1"
+    },
+    "devDependencies": {
+        "bun-types": "latest",
+        "kysely-codegen": "^0.18.3",
+        "prettier": "^3.5.3"
+    },
+    "module": "src/index.js"
 }
