@@ -32,11 +32,12 @@ export abstract class CustomerService {
         if (newUser.name) updateQuery.set('name', newUser.name);
         if (newUser.email) updateQuery.set('email', newUser.email);
 
-        return updateQuery.executeTakeFirst();
+        const updateResult = await updateQuery.executeTakeFirst();
+        return updateResult;
     }
 
     static async deleteUser(id: string) {
-        const deleteQuery = db.deleteFrom('customers').where('id', '=', id).executeTakeFirst();
+        const deleteQuery = await db.deleteFrom('customers').where('id', '=', id).executeTakeFirst();
         return deleteQuery;
     }
 }

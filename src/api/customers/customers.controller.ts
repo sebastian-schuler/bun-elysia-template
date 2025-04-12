@@ -2,7 +2,7 @@ import Elysia, { t } from 'elysia';
 import { CustomerService } from './customers.service';
 import { createCustomerBody, updateCustomerBody } from './customers.model';
 
-export const CustomersController = new Elysia({ prefix: '/users' })
+export const CustomersController = new Elysia({ prefix: '/customers' })
     .get('/', () => CustomerService.getUsers())
     .post('/', ({ body }) => CustomerService.createUser(body), {
         body: createCustomerBody,

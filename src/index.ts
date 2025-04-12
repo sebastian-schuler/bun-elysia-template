@@ -11,12 +11,16 @@ const server = new Elysia({ name: 'Server' })
     .use(cors())
     .use(helmet())
     .use(swagger())
+    .onError(({ code, error }) => {
+        console.log('HAHA');
+        return new Response(error.toString());
+    })
 
     // Routes
     .use(v1Routes);
 
 server.listen({ port: env.PORT }, ({ hostname, port }) => {
     const url = env.NODE_ENV === 'production' ? 'https' : 'http';
-    console.log(`✅ Elysia is running at ${url}://${hostname}:${port}`);
-    console.log(`✅ Swagger available at ${url}://${hostname}:${port}/swagger`);
+    console.info(`✅ Elysia is running at ${url}://${hostname}:${port}`);
+    console.info(`✅ Swagger available at ${url}://${hostname}:${port}/swagger`);
 });
