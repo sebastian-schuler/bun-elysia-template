@@ -1,4 +1,6 @@
 {
+    // Git
+    "git.autofetch": true,
     // Prettier
     "prettier.singleQuote": true,
     "prettier.quoteProps": "consistent",

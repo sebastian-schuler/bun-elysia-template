@@ -6,8 +6,13 @@ export const createCustomerBody = t.Object({
 });
 export type CreateCustomerBody = typeof createCustomerBody.static;
 
-export const updateCustomerBody = t.Object({
-    email: t.Optional(t.String()),
-    name: t.Optional(t.String()),
-});
+export const updateCustomerBody = t.Object(
+    {
+        email: t.Optional(t.String()),
+        name: t.Optional(t.String()),
+    },
+    {
+        minProperties: 1,
+    }
+);
 export type UpdateCustomerBody = typeof updateCustomerBody.static;

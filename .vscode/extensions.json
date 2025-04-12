@@ -3,6 +3,7 @@
         "esbenp.prettier-vscode",
         "mikestead.dotenv",
         "aaron-bond.better-comments",
-        "yoavbls.pretty-ts-errors"
+        "yoavbls.pretty-ts-errors",
+        "usernamehw.errorlens"
     ]
 }

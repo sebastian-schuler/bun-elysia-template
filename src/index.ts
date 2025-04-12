@@ -7,7 +7,7 @@ import { helmet } from 'elysia-helmet';
 import { errorHandler } from './middleware/error-handling/error-handler';
 import { log } from './middleware/logger';
 
-const server = new Elysia({ name: 'Server' })
+export const app = new Elysia({ name: 'Server' })
     // Middleware
     .use(
         log.into({
@@ -25,10 +25,10 @@ const server = new Elysia({ name: 'Server' })
     .onError((props) => errorHandler(props))
 
     // Routes
-    .use(v1Routes);
+    .use(v1Routes)
 
-server.listen({ port: env.PORT }, ({ hostname, port }) => {
-    const url = env.NODE_ENV === 'production' ? 'https' : 'http';
-    console.info(`✅ Elysia is running at ${url}://${hostname}:${port}`);
-    console.info(`✅ Swagger available at ${url}://${hostname}:${port}/swagger`);
-});
+    .listen({ port: env.PORT }, ({ hostname, port }) => {
+        const url = env.NODE_ENV === 'production' ? 'https' : 'http';
+        console.info(`✅ Elysia is running at ${url}://${hostname}:${port}`);
+        console.info(`✅ Swagger available at ${url}://${hostname}:${port}/swagger`);
+    });

@@ -1,11 +1,17 @@
 import { CamelCasePlugin, DeduplicateJoinsPlugin, Kysely, PostgresDialect } from 'kysely';
 import { Pool } from 'pg';
 import { DB } from './types';
+import { env } from '~/config/env';
 
 export const createDb = async () => {
     try {
         const pool = new Pool({
-            connectionString: process.env.DATABASE_URL,
+            host: env.DB_HOST,
+            database: env.DB_NAME,
+            user: env.DB_USER,
+            password: env.DB_PASSWORD,
+            port: env.DB_PORT,
+            max: 10,
         });
 
         // Test the connection with a simple query

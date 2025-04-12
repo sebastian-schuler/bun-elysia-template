@@ -70,7 +70,7 @@ export default [
     },
     {
         // Ignore patterns
-        ignores: ['node_modules/**', 'dist/**', 'build/**'],
+        ignores: ['node_modules/**', 'dist/**', 'build/**', 'db'],
     },
     eslintPrettier,
 ];
