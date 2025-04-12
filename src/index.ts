@@ -4,17 +4,25 @@ import { v1Routes } from './api';
 import { env } from './config/env';
 import cors from '@elysiajs/cors';
 import { helmet } from 'elysia-helmet';
+import { errorHandler } from './middleware/error-handling/error-handler';
+import { log } from './middleware/logger';
 
 const server = new Elysia({ name: 'Server' })
-
     // Middleware
+    .use(
+        log.into({
+            autoLogging: {
+                ignore(ctx) {
+                    if (ctx.isError) return true;
+                    return false;
+                },
+            },
+        })
+    )
     .use(cors())
     .use(helmet())
     .use(swagger())
-    .onError(({ code, error }) => {
-        console.log('HAHA');
-        return new Response(error.toString());
-    })
+    .onError((props) => errorHandler(props))
 
     // Routes
     .use(v1Routes);

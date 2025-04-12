@@ -27,6 +27,7 @@ export default [
             // Error prevention
             'no-var': 'error',
             'prefer-const': 'error',
+            'no-unused-vars': 'off',
             'no-unused-expressions': 'error',
             'no-duplicate-imports': 'error',
             'no-return-await': 'error',
@@ -63,6 +64,8 @@ export default [
 
             // Error handling
             'no-throw-literal': 'error',
+
+            'prettier/prettier': ['error', { endOfLine: 'auto' }],
         },
     },
     {

@@ -24,9 +24,8 @@ export const createDb = async () => {
         }).withSchema('testing');
 
         return db;
-    } catch (error) {
-        console.error('❌ Failed to connect to database:');
-        console.error(error);
+    } catch (e) {
+        console.error('❌ Failed to connect to database:', e instanceof Error ? e.message : '');
         process.exit(1);
     }
 };
