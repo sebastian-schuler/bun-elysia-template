@@ -21,19 +21,19 @@ export const envSchema = t.Object({
 
 function getEnvironmentVariables() {
     const envData = {
-        PORT: Number(process.env.PORT),
-        NODE_ENV: process.env.NODE_ENV,
+        PORT: Number(Bun.env.PORT),
+        NODE_ENV: Bun.env.NODE_ENV,
 
         // Database
-        DB_HOST: process.env.DB_HOST,
-        DB_PORT: Number(process.env.DB_PORT),
-        DB_USER: process.env.DB_USER,
-        DB_PASSWORD: process.env.DB_PASSWORD,
-        DB_NAME: process.env.DB_NAME,
+        DB_HOST: Bun.env.DB_HOST,
+        DB_PORT: Number(Bun.env.DB_PORT),
+        DB_USER: Bun.env.DB_USER,
+        DB_PASSWORD: Bun.env.DB_PASSWORD,
+        DB_NAME: Bun.env.DB_NAME,
 
         // App
-        isDev: process.env.NODE_ENV === 'development',
-        isProd: process.env.NODE_ENV === 'production',
+        isDev: Bun.env.NODE_ENV === 'development',
+        isProd: Bun.env.NODE_ENV === 'production',
     };
 
     const checkResult = Value.Check(envSchema, envData);
