@@ -1,5 +1,5 @@
 import Elysia, { t } from 'elysia';
-import { isDefined } from 'ts-scribe/typeguards';
+import { isDefined } from 'ts-scribe';
 import { AppError } from '~/middleware/error-handling/errors';
 import { createCustomerBody, updateCustomerBody } from './customers.model';
 import { CustomerService } from './customers.service';
